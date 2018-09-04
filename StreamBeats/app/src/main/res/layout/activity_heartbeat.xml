@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".HeartbeatActivity"
+    tools:deviceIds="wear">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:boxedEdges="all">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/heart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="Stopped"
+                android:textColor="@color/light_grey"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/accuracy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Accuracy"
+                android:textColor="@color/light_grey"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="25px"
+                android:layout_weight="3" />
+
+            <LinearLayout
+                android:id="@+id/row"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/appIcon"
+                    android:layout_width="128px"
+                    android:layout_height="128px"
+                    android:layout_weight="1"
+                    android:onClick="startServer"
+                    android:src="@drawable/app_icon" />
+
+                <TextView
+                    android:id="@+id/uid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="null"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="25px"
+                android:layout_weight="3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Not Connected"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/ipAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0.0.0.0"
+                android:textColor="@color/dark_grey"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Start"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/pauseButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pause"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </FrameLayout>
+</android.support.wear.widget.BoxInsetLayout>
