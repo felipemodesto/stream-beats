@@ -1,4 +1,4 @@
-package com.firasoft.streambeats;
+package io.modesto.streambeats;
 
 import android.graphics.Color;
 import android.util.Log;
@@ -64,6 +64,7 @@ public class Network {
             });
 
         } catch (Exception ex) {
+            //TODO: Handle Exceptions
             Log.d("HeartRate", "Rutrow? " + ex.getCause());
             Log.e("HeartRate","Exception",ex);
         }

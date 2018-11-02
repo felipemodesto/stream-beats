@@ -1,4 +1,4 @@
-package com.firasoft.streambeats;
+package io.modesto.streambeats;
 
 import android.content.Context;
 import android.graphics.Color;
