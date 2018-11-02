@@ -62,6 +62,10 @@ public class HeartbeatActivity extends WearableActivity implements SensorEventLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_heartbeat);
+
+        //Ensuring we request access to the body sensor permission as it's considered "dangerous" and is not given automatically (for some reason *sigh*)
+        requestPermissions(new String[]{"android.permission.BODY_SENSORS"},6969);
+
         //final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
         mheartRateText = (TextView) findViewById(R.id.heart);
         mAccuracyText = (TextView) findViewById(R.id.accuracy);
