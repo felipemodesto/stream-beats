@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.print.PrintAttributes;
 import android.provider.Settings;
 import android.support.wearable.activity.WearableActivity;
 import android.view.WindowManager;
@@ -75,8 +76,8 @@ public class HeartbeatActivity extends WearableActivity implements SensorEventLi
         //Getting phone properties
         mDeviceID = Secure.getString(this.getContentResolver(),Secure.ANDROID_ID);
         mIP = Network.getIPAddress(true);
-        ipText.setText("IP: "+ mIP);
-        uidText.setText("modesto.io/heart/" + mDeviceID);
+        ipText.setText("Local IP: "+ mIP);
+        uidText.setText("Broadcasting BPM to\nmodesto.io/heart/" + mDeviceID);
 
         //Activating Sensor
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -122,6 +123,12 @@ public class HeartbeatActivity extends WearableActivity implements SensorEventLi
 
     private void startMeasure() {
         if (mHeartRateSensor != null) {
+            TextView uidText = (TextView) findViewById(R.id.uid);
+            if (Network.startedServer) {
+                uidText.setTextColor(Color.GREEN);
+            } else {
+                uidText.setTextColor(Color.RED);
+            }
             boolean sensorRegistered = mSensorManager.registerListener(this, mHeartRateSensor, SensorManager.SENSOR_DELAY_FASTEST);
             Log.d("HeartRate", "Sensor Status: Sensor registered? " + (sensorRegistered ? "yes" : "no"));
 

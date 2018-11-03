@@ -20,6 +20,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25px"
+                android:layout_weight="3" />
+
             <TextView
                 android:id="@+id/heart"
                 android:layout_width="match_parent"
@@ -30,6 +35,11 @@
                 android:text="Stopped"
                 android:textColor="@color/light_grey"
                 android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3" />
 
             <TextView
                 android:id="@+id/accuracy"
@@ -55,13 +65,23 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
+                <Space
+                    android:layout_width="50px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
                 <ImageView
                     android:id="@+id/appIcon"
-                    android:layout_width="128px"
-                    android:layout_height="128px"
+                    android:layout_width="100px"
+                    android:layout_height="100px"
                     android:layout_weight="1"
                     android:onClick="startServer"
                     android:src="@drawable/app_icon" />
+
+                <Space
+                    android:layout_width="50px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/uid"
@@ -71,26 +91,15 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="null"
-                    android:textColor="@android:color/holo_red_dark"
+                    android:textColor="@android:color/white"
                     android:textStyle="bold" />
 
+                <Space
+                    android:layout_width="50px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
             </LinearLayout>
-
-            <Space
-                android:layout_width="fill_parent"
-                android:layout_height="25px"
-                android:layout_weight="3" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Not Connected"
-                android:textColor="@color/dark_grey"
-                android:textStyle="bold"
-                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/ipAddress"
@@ -103,21 +112,11 @@
                 android:textColor="@color/dark_grey"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/startButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Start"
-                android:visibility="gone" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="25px"
+                android:layout_weight="3" />
 
-            <Button
-                android:id="@+id/pauseButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Pause"
-                android:visibility="gone" />
         </LinearLayout>
 
     </FrameLayout>
